@@ -19,9 +19,26 @@
 	<script src="../js/ljb_jupin.js"></script>
 	<script type="text/javascript" src="../common/js/iscroll.js"></script>
 </head>
-
-<body>
-
+<style>
+	#wrapper {
+		position: absolute;
+		z-index: 1;
+		top: 0px;
+		bottom: 0px;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+	}
+	#scroller {
+		position: absolute;
+		z-index: 1;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+		width: 100%;
+	}
+</style>
+<body onload="loaded()">
+<div id="wrapper">
+<div id='scroller'>
 <div class="header">
 	<div class="top">
 		<a href="gjr_goods.html" class="fanhui"></a>
@@ -31,41 +48,48 @@
 <div id="header"></div>
 <div class="g_display">
 	<div class="g_dleft">
-		<a href="">
+		<a href="javascript:;">
 			<img src="../img/dingz_07.png" alt="">
 		</a>
 	</div>
-	<div class="g_dright">
-		<ul class="g_type">
-			<li class="first">
-				<a href="">
+	<div class="g_dright swiper-container">
+		<ul class="g_type swiper-wrapper">
+			<li class="first swiper-slide">
+				<a href="javascript:;">
 					<img src="../img/dingz_10.png" alt="">
 				</a>
 			</li>
-			<li>
-				<a href="">
+			<li class="swiper-slide">
+				<a href="javascript:;">
 					<img src="../img/dingz_13.png" alt="">
 				</a>
 			</li>
-			<li>
-				<a href="">
+			<li class="swiper-slide">
+				<a href="javascript:;">
 					<img src="../img/dingz_15.png" alt="">
 				</a>
 			</li>
-			<li>
-				<a href="">
+			<li class="swiper-slide">
+				<a href="javascript:;">
 					<img src="../img/dingz_10.png" alt="">
 				</a>
 			</li>
-			<li>
-				<a href="">
-					<img src="../img/dingz_10.png" alt="">
+			<li class="swiper-slide">
+				<a href="javascript:;">
+					<img src="../img/dingz_13.png" alt="">
 				</a>
 			</li>
+			<li class="swiper-slide">
+				<a href="javascript:;">
+					<img src="../img/dingz_15.png" alt="">
+				</a>
+			</li>
+			
 		</ul>
 		<div class="circle">
 			<ul>
 				<li class="first"></li>
+				<li></li>
 				<li></li>
 				<li></li>
 				<li></li>
@@ -132,34 +156,59 @@
 <div class="g_select">
 	<img src="../img/dingz_24.png" alt="">
 </div>
-<div class="g_su">
-	<ul class="s">
-		<li>
-			<a href="">
+<div class="g_su swiper-container1">
+	<ul class="s swiper-wrapper">
+		<li class="swiper-slide">
+			<a href="javascript:;">
 				<img src="../img/dingz_27.png" alt="">
 			</a>
 		</li>
-		<li>
-			<a href="">
+		<li class="swiper-slide">
+			<a href="javascript:;">
 				<img src="../img/dingz_29.png" alt="">
 			</a>
 		</li>
-		<li>
-			<a href="">
+		<li class="swiper-slide">
+			<a href="javascript:;">
 				<img src="../img/dingz_31.png" alt="">
 			</a>
 		</li>
-		<li>
-			<a href="">
+		<li class="swiper-slide">
+			<a href="javascript:;">
 				<img src="../img/dingz_27.png" alt="">
 			</a>
 		</li>
-		<li>
-			<a href="">
+		<li class="swiper-slide">
+			<a href="javascript:;">
 				<img src="../img/dingz_29.png" alt="">
 			</a>
 		</li>
-	</ul>
+		<li class="swiper-slide">
+			<a href="javascript:;">
+				<img src="../img/dingz_27.png" alt="">
+			</a>
+		</li>
+		<li class="swiper-slide">
+			<a href="javascript:;">
+				<img src="../img/dingz_29.png" alt="">
+			</a>
+		</li>
+		<li class="swiper-slide">
+			<a href="javascript:;">
+				<img src="../img/dingz_31.png" alt="">
+			</a>
+		</li>
+		<li class="swiper-slide">
+			<a href="javascript:;">
+				<img src="../img/dingz_27.png" alt="">
+			</a>
+		</li>
+		<li class="swiper-slide">
+			<a href="javascript:;">
+				<img src="../img/dingz_29.png" alt="">
+			</a>
+		</li>
+		
 </div>
 <div class="g_select">
 	<img src="../img/dingz_42.png" alt="">
@@ -167,56 +216,65 @@
 <div class="g_selects">
 	<img src="../img/dingz_44.png" alt="">
 </div>
-
-
+</div>
+</div>
 <div class="ljb_bottome">
 	<ul>
 		<li>
-			<a href="gjr_shopcar.html">
+			<a href="yzf-sure.html">
 				<img src="../img/ljb/ljb_goumai (1).png">
 			</a>
 		</li>
 		<li>
-			<a href="gjr_shopcar.html">
+			<a href="hsf-denglu.html">
 				<img src="../img/ljb/ljb_goumai (2).png">
 			</a>
 		</li>
 	</ul>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
 <script>	
+	var myScroll;
+    function loaded () {
+        myScroll = new IScroll('#wrapper', {
+            scrollbars: true,
+            mouseWheel: true,
+            interactiveScrollbars: true,
+            shrinkScrollbars: 'scale',
+            fadeScrollbars: true,
+           	click:true,
+        });
+    }
+     var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        spaceBetween: 10,
+    });
+    var swiper = new Swiper('.swiper-container1', {
 
-$(document).ready(function(){
-	    var swiper = new Swiper('.swiper-container',{
-	    	slidesPerView:'auto',
-	    });		
-	});
-
-
-
-
+//      slidesPerView: ,
+//      paginationClickable: true,
+        spaceBetween: 10,
+//      freeMode: true
+    });
+    
+    $(function(){
+    	$('.g_dright>ul>li').each(function(index,value){
+    		$(this).on('touchstart',function(){
+    			$('.g_dright>ul>li').each(function(index,value){
+    				$(value).removeClass('first')
+    				$('.circle>ul>li').eq(index).removeClass('first')
+    			})
+    			$(value).addClass('first');
+    			$('.circle>ul>li').eq(index).addClass('first')
+    		})
+    	})
+    	$('.g_imgb>ul>li>div').each(function(index,value){
+    		$(this).on('touchstart',function(){
+    			$(this).find('div').toggleClass('g_c')
+    		})
+    	})
+    	
+    })
 </script>

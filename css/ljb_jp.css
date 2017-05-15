@@ -73,7 +73,7 @@ body{
 }
 .g_dright>ul{
 	width:100%;
-	height:200%;
+	height:100%;
 }
 .g_dright>ul>li{
 	width:1.51rem;
@@ -91,7 +91,7 @@ body{
 }
 .circle{
 	width:0.05rem;
-	height:1rem;
+	height:1.2rem;
 	position: absolute;
 	right:0;
 	bottom:0;
@@ -183,7 +183,7 @@ body{
 	overflow: hidden;
 }
 .g_su>ul{
-	width:200%;
+	width:100%;
 }
 .g_su>ul>li{
 	width:1.55rem;

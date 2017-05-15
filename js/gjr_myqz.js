@@ -24,7 +24,6 @@ $(function(){
 	})
 	$('.meile').on('touchstart',function(){
 		$(this).parent().parent().parent().remove()
-//		$('#gjr').hide();
 		
 	})
 	$('body').on('touchstart',function(e){
